@@ -8,8 +8,10 @@ import { Link } from "react-router-dom";
 const Box = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 40px;
     justify-items: center;
+    margin-left: 50px;
+    margin-bottom: 30px;
 `;
 const VanTile = styled.div`
     /* padding-inline: 23px; */
@@ -17,13 +19,21 @@ const VanTile = styled.div`
     flex-direction: column;
     align-items: center;
     justify-items: center;
-
+    box-shadow: 5px 5px 10px hsla(76.59, 24.35%, 37.84%, 0.274);
     /* gap: 3px; */
-    margin-top: 40px;
+    margin-top: 20px;
+    background-color: #ffffffd6;
 `;
 const Img = styled.img`
-    max-width: 85%;
+    max-width: 100%;
+    padding: 30px;
+    display: flex;
+    text-align: center;
     border-radius: 5px;
+`;
+const Tab = styled.div`
+    margin-left: 32px;
+    margin-bottom: 40px;
 `;
 const H3 = styled.h3``;
 function vans() {
@@ -50,15 +60,17 @@ function vans() {
                     <VanTile key={van.id}>
                         <Link to={`/vans/${van.id}`}>
                             <Img src={van.imageUrl} />
-                            <H3>{van.name}</H3>
-                            <p>
-                                ${van.price}
-                                <span>/day</span>
-                            </p>
+                            <Tab>
+                                <H3>{van.name}</H3>
+                                <p>
+                                    ${van.price}
+                                    <span>/day</span>
+                                </p>
 
-                            <i className={`van-type ${van.type} selected`}>
-                                {van.type}
-                            </i>
+                                <i className={`van-type ${van.type} selected`}>
+                                    {van.type}
+                                </i>
+                            </Tab>
                         </Link>
                     </VanTile>
                 ))}

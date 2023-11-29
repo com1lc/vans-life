@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import img from "../assets/images/home-hero.png";
 
-const HomeContainer = styled.div`
+const HomeContainer = styled.main`
     background-image: url(${img});
     background-size: cover;
     min-height: 350px;

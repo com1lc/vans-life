@@ -9,7 +9,7 @@ const Head = styled.header`
     height: 110px;
     font-size: 1.5rem;
     font-weight: 600;
-    margin: auto 50px;
+    margin: 0 50px;
     & a {
         text-decoration: none;
         color: #4d4d4d;

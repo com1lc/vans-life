@@ -10,7 +10,8 @@ const Box = styled.section`
 `;
 const VanTile = styled.div`
     display: flex;
-    background-color: #daf68d;
+    background-color: white;
+    /* background-color: #daf68d; */
     padding: 30px;
     border-radius: 10px;
     cursor: pointer;
