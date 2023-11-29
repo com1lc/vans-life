@@ -1,9 +1,24 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { useState } from "react";
 import { useEffect } from "react";
 
 import { Link } from "react-router-dom";
+
+const variations = {
+    simple: css`
+        background-color: #72e5fc;
+        color: red;
+    `,
+    rugged: css`
+        background-color: #115e59;
+        color: white;
+    `,
+    luxury: css`
+        background-color: #f2b957;
+        color: blue;
+    `,
+};
 
 const Box = styled.div`
     display: grid;
@@ -36,6 +51,20 @@ const Tab = styled.div`
     margin-bottom: 40px;
 `;
 const H3 = styled.h3``;
+const I = styled.i`
+    align-self: flex-start;
+
+    height: 34px;
+    padding: 6px 26px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    /* background-color: ; */
+    color: #4d4d4d;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+    ${(props) => variations[props.$variation]}
+`;
 function vans() {
     const [vans, setVans] = useState([]);
     useEffect(function () {
@@ -67,9 +96,7 @@ function vans() {
                                     <span>/day</span>
                                 </p>
 
-                                <i className={`van-type ${van.type} selected`}>
-                                    {van.type}
-                                </i>
+                                <I $variation={van.type}>{van.type}</I>
                             </Tab>
                         </Link>
                     </VanTile>
